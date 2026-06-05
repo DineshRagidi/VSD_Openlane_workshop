@@ -136,25 +136,24 @@ magic -T /home/vsduser/Desktop/OpenLane/designs/picorv32a/sky130A/libs.tech/magi
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
 
-      Running Placement
+   Running Placement
       run_placement
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/processing_before_placement.png?raw=true)
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_in_magic.png?raw=true)
        ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_run_complete.png?raw=true)
 
 
-       Day 3 — Design and Characterisation of Library Cells using Magic & ngspice
+ Day 3 — Design and Characterisation of Library Cells using Magic & ngspice
       CMOS Inverter — SPICE Deck
 
-      To characterise a standard cell, we write a SPICE netlist describing the PMOS and NMOS transistors along with their W/L ratios, supply voltage, input stimulus, and load       capacitance.
+  To characterise a standard cell, we write a SPICE netlist describing the PMOS and NMOS transistors along with their W/L ratios, supply voltage, input stimulus, and load       capacitance.
+    Key parameters we extract from simulation:
 
-      Key parameters we extract from simulation:
-
-    Rise time — 20% to 80% of output rising edge
+  Rise time — 20% to 80% of output rising edge
     Fall time — 80% to 20% of output falling edge
     Propagation delay — 50% input to 50% output
 
-    16-Mask CMOS Fabrication Process (Brief Overview)
+# 16-Mask CMOS Fabrication Process (Brief Overview)
 
 The chip fabrication follows a sequence of about 16 mask steps:
 
