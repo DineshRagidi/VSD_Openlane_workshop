@@ -174,6 +174,7 @@ magic -T sky130A.tech sky130_inv.mag &
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/mask_inverter.png?raw=true)
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/inverter_pmos_in_tcl.png?raw=true)
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Inverter_layout_in_magic.png?raw=true)
+  Grid Formation
    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Grid_formation_using_track.png?raw=true)
  #  Extracting SPICE Netlist from Magic
 Inside the tkcon console:
@@ -291,7 +292,7 @@ After routing, parasitics (resistance and capacitance of actual wires) are extra
  gen_pdn
  Running Routing
  run_routing
-  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/arrangement_of_diffcells.png?raw=true)
+  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Routing_done.png?raw=true)
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
   Common violations to look out for:
 
