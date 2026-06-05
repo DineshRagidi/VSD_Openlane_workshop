@@ -98,8 +98,8 @@ Running Synthesis
 ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/synythesis_success.png?raw=true)
 After synthesis completes, we can calculate the flop ratio — a useful sanity check:
 Flop Ratio = (No. of D Flip-Flops) / (Total No. of Cells)
-           = 1613 / 15762
-           ≈ 0.1023  →  ~10.23%
+           = 1613 / 14876
+           ≈ 0.108429 →  ~10.8429%
 ![](https://raw.githubusercontent.com/DineshRagidi/VSD_Openlane_workshop/a2ebda367fe2ec1b1c3f0a57dc34d59425939393/SYNTHESIS.jfif)
 
            Day 2 — Floorplanning and Introduction to Library Cells
@@ -135,12 +135,19 @@ magic -T /home/vsduser/Desktop/OpenLane/designs/picorv32a/sky130A/libs.tech/magi
       def read picorv32a.def &
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
+      Equidistant placement of ports
+       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/equidistant_ports.png?raw=true)
+       Diagonally equidistant cells
+       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/diagonal_equidistant_tapcells.png?raw=true)
+       
 
    Running Placement
       run_placement
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/processing_before_placement.png?raw=true)
       ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_in_magic.png?raw=true)
+      Placement done
        ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_run_complete.png?raw=true)
+       
 
 
  Day 3 — Design and Characterisation of Library Cells using Magic & ngspice
@@ -171,9 +178,14 @@ Cloning the Standard Cell Repository
 git clone https://github.com/nickson-jose/vsdstdcelldesign.git
 magic -T sky130A.tech sky130_inv.mag &
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/tkcon_lefcreation.png?raw=true)
-  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/mask_inverter.png?raw=true)
-  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/inverter_pmos_in_tcl.png?raw=true)
+  INVERTER LAYOUT
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Inverter_layout_in_magic.png?raw=true)
+  Mask of iverter
+  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/mask_inverter.png?raw=true)
+  Pmos identified in Inverter
+  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/inverter_pmos_in_tcl.png?raw=true)
+  
+  
   Grid Formation
    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Grid_formation_using_track.png?raw=true)
  #  Extracting SPICE Netlist from Magic
@@ -195,6 +207,7 @@ ext2spice
 From the waveform, measure rise time, fall time, and propagation delay values. Rise transition time calculation
 
 Rise transition time = Time taken for output to rise to 80% - Time taken for output to rise to 20%
+ ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/defined_ports.png?raw=true)
 
 20% of output = 660 mV
 
@@ -211,12 +224,18 @@ LEF Files and Guidelines for Standard Cell Ports
 
 Before a custom cell can be used inside OpenLANE, it needs a proper LEF file describing its physical boundary, pin locations, and metal layer information. Port definitions must follow two important rules:
 
-    All input and output ports must lie on the intersection of horizontal and vertical routing tracks
+# Basic rules
+All input and output ports must lie on the intersection of horizontal and vertical routing tracks
     The cell width must be an odd multiple of the track pitch, and height must be an odd multiple of the vertical track pitch
+    
 
 Static Timing Analysis (STA) Concepts
 
-Setup slack = Data Required Time − Data Arrival Time (must be ≥ 0)
+# Setup slack = Data Required Time − Data Arrival Time (must be ≥ 0)
+If slack is negative 
+# Setup time  :A finite time 'S' required(before clock edge comes) for input 'D' to get proper output
+
+ ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/diagonal_equidistant_tapcells.png?raw=true)
 
 Key sources of uncertainty accounted for in STA:
 
@@ -232,13 +251,11 @@ CTS builds a balanced tree of clock buffers to distribute the clock signal acros
     Setup timing should be re-verified post-CTS as clock paths have changed
 
 Lab — Custom Cell Integration and STA with OpenSTA
- ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/defined_ports.png?raw=true)
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/merging_LEF_files.png?raw=true)
   Get syntax for grid command
 help grid
 Set grid values accordingly
 grid 0.46um 0.34um 0.23um 0.17um
- ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/diagonal_equidistant_tapcells.png?raw=true)
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/equidistant_ports.png?raw=true)
   Screenshot of placement def in magic 
    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
@@ -292,8 +309,12 @@ After routing, parasitics (resistance and capacitance of actual wires) are extra
  gen_pdn
  Running Routing
  run_routing
+ Detailed routing Started
+  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/start_detaailed_route.png?raw=true)
+  Routing done
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Routing_done.png?raw=true)
-  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
+  
+  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Detail_routing.png?raw=true)
   Common violations to look out for:
 
 .    Min spacing violations – two wires too close on the same layer
