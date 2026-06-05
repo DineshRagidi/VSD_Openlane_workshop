@@ -257,16 +257,16 @@ help grid
 Set grid values accordingly
 grid 0.46um 0.34um 0.23um 0.17um
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Grid_formtion_using_track.png?raw=true)
-  Screenshot of placement def in magic 
-   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
-    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_in_magic.png?raw=true)
-    Command to run OpenROAD tool
-   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK.jfif?raw=true)
-    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK2.jfif?raw=true)
-    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK3.jfif?raw=true)
-    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK4.jfif?raw=true)
- ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK5.jfif?raw=true)
+  Different Slacks Trying to reduce Slack by changing inverters
+  
+![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK5.jfif?raw=true)
+![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK4.jfif?raw=true)
+![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK3.jfif?raw=true)
+ ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK2.jfif?raw=true)
 openroad
+    Command to run OpenROAD tool
+   
+  
 
 Reading lef file: read_lef /OpenLane/designs/picorv32a/runs/24-03_10-03/tmp/merged.nom.lef
 
@@ -289,9 +289,6 @@ Setting all cloks as propagated clocks: set_propagated_clock [all_clocks]
 Check syntax of 'report_checks' command: help report_checks
 
 Generating custom timing report: report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
- ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_run_complete.png?raw=true)
-  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/processing_before_placement.png?raw=true)
-  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Read_lef_file.pngraw=true)
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Routing_done.png?raw=true)
   Exit to OpenLANE flow exit
 # Day 5 — Final RTL to GDSII using TritonRoute & OpenSTA
