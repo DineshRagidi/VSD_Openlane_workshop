@@ -256,7 +256,7 @@ Lab — Custom Cell Integration and STA with OpenSTA
 help grid
 Set grid values accordingly
 grid 0.46um 0.34um 0.23um 0.17um
-  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/equidistant_ports.png?raw=true)
+  ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Grid_formtion_using_track.png?raw=true)
   Screenshot of placement def in magic 
    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
     ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_in_magic.png?raw=true)
