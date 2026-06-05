@@ -100,7 +100,7 @@ After synthesis completes, we can calculate the flop ratio — a useful sanity c
 Flop Ratio = (No. of D Flip-Flops) / (Total No. of Cells)
            = 1613 / 15762
            ≈ 0.1023  →  ~10.23%
-
+![](https://raw.githubusercontent.com/DineshRagidi/VSD_Openlane_workshop/a2ebda367fe2ec1b1c3f0a57dc34d59425939393/SYNTHESIS.jfif)
 
            Day 2 — Floorplanning and Introduction to Library Cells
 Chip Floorplanning — Core Area and Utilisation
@@ -243,7 +243,11 @@ grid 0.46um 0.34um 0.23um 0.17um
    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/floor_plan_complete.png?raw=true)
     ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/placement_in_magic.png?raw=true)
     Command to run OpenROAD tool
-
+   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK.jfif?raw=true)
+    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK2.jfif?raw=true)
+    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK3.jfif?raw=true)
+    ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK4.jfif?raw=true)
+ ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/CLOCK5.jfif?raw=true)
 openroad
 
 Reading lef file: read_lef /OpenLane/designs/picorv32a/runs/24-03_10-03/tmp/merged.nom.lef
