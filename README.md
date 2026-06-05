@@ -89,7 +89,7 @@ make mount
 ./flow.tcl -interactive
 package require openlane 1.0.2
 
-![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/terminal_open_magic.png?raw=true)
+
 ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/openlane_setup_dine.png?raw=true)
 
 Running Synthesis
@@ -310,7 +310,7 @@ After routing, parasitics (resistance and capacitance of actual wires) are extra
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/start_detaailed_route.png?raw=true)
   Routing done
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Routing_done.png?raw=true)
-  
+  Detailed routing processing
   ![](https://github.com/DineshRagidi/VSD_Openlane_workshop/blob/e48f4b4dd9a6846be0652084d3f910e713c1b56b/Detail_routing.png?raw=true)
   Common violations to look out for:
 
